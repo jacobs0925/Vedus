@@ -1,5 +1,12 @@
 let conversation_history = []
 
+let hash = window.location.hash;
+if (hash)
+{
+    hash = hash.substr(1)
+}
+console.log(hash)
+
 async function sendMessage(message, conversationHistory)
 {
     const endpoint = 'https://i43ejyk2csrbfjsgshaoe7j2qq0voeep.lambda-url.us-west-1.on.aws';
