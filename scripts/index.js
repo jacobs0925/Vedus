@@ -1,12 +1,5 @@
 let conversation_history = []
 
-let hash = window.location.hash;
-if (hash)
-{
-    hash = hash.substr(1)
-}
-console.log(hash)
-
 async function sendMessage(message, conversationHistory)
 {
     const endpoint = 'https://i43ejyk2csrbfjsgshaoe7j2qq0voeep.lambda-url.us-west-1.on.aws';
@@ -116,6 +109,14 @@ chatInput.addEventListener("keydown", function (event)
 
 document.addEventListener("DOMContentLoaded", function ()
 {
+
+    let hash = window.location.hash;
+    if (hash)
+    {
+        hash = hash.substr(1)
+    }
+    console.log(hash)
+
     let scrollbar = document.getElementById('chat-scrollbar')
     let initMessage = "Hello! I'm here to help you with treatment. Ask me any questions you have!"
     let initMessageData =
