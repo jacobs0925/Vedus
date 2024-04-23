@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function ()
 
     var contextMessage = "You are now a ${hash}. you will give detailed but consise ${hash} advice to your patient. Be formal yet not too difficult to understand and answer their questions to the best of your abilities."
     conversation_history.push({ 'role': 'user', 'content': contextMessage })
-    sendMessage(contextMessage)
+    sendMessage(contextMessage, [])
 
     let scrollbar = document.getElementById('chat-scrollbar')
     let initMessage = "Hello! I'm here to help you with treatment. Ask me any questions you have!"
