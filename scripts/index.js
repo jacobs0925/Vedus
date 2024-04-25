@@ -11,8 +11,8 @@ async function sendMessage(message, conversationHistory)
 
 function startLoad()
 {
-    let scrollbar = document.getElementById('chat-scrollbar')
-    let loadContent = '<img class="loading-img" src="./images/loading.gif">'
+    let scrollbar = document.getElementById('vedusgpt-chat-scrollbar')
+    let loadContent = '<img class="vedusgpt-loading-img" src="./images/loading.gif">'
     let loadMessageData =
     {
         "content": loadContent,
@@ -27,7 +27,7 @@ function startLoad()
 
 function endLoad(loadMessage)
 {
-    let scrollbar = document.getElementById('chat-scrollbar')
+    let scrollbar = document.getElementById('vedusgpt-chat-scrollbar')
     loadMessage.remove()
 }
 
@@ -38,17 +38,17 @@ function generateMessage(messageData)
     let isUser = messageData.isUser
 
     let messageContainer = document.createElement('div')
-    messageContainer.classList = isUser ? "message user" : "message"
+    messageContainer.classList = isUser ? "vedusgpt-message vedusgpt-user" : "vedusgpt-message"
 
     let imageContainer = document.createElement('div')
-    imageContainer.className = "message-user-image"
+    imageContainer.className = "vedusgpt-message-user-image"
 
     let image = document.createElement('img')
-    image.className = "user-image"
+    image.className = "vedusgpt-user-image"
     image.src = src
 
     let messageContent = document.createElement('div')
-    messageContent.className = "message-content"
+    messageContent.className = "vedusgpt-message-content"
     messageContent.innerHTML = message
 
     messageContainer.appendChild(imageContainer)
@@ -61,8 +61,8 @@ function generateMessage(messageData)
 
 async function submitMessage()
 {
-    let input = document.getElementById('chat-input')
-    let scrollbar = document.getElementById('chat-scrollbar')
+    let input = document.getElementById('vedusgpt-chat-input')
+    let scrollbar = document.getElementById('vedusgpt-chat-scrollbar')
     let message = input.value
     input.value = ""
 
@@ -93,10 +93,10 @@ async function submitMessage()
 }
 
 
-let submit = document.getElementById('submit-button')
+let submit = document.getElementById('vedusgpt-submit-button')
 submit.addEventListener('click', submitMessage)
 
-let chatInput = document.getElementById('chat-input');
+let chatInput = document.getElementById('vedusgpt-chat-input');
 
 chatInput.addEventListener("keydown", function (event)
 {
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function ()
     conversation_history.push({ 'role': 'user', 'content': contextMessage })
     sendMessage(contextMessage, [])
 
-    let scrollbar = document.getElementById('chat-scrollbar')
+    let scrollbar = document.getElementById('vedusgpt-chat-scrollbar')
     let initMessage = "Hello! I'm here to help you with treatment. Ask me any questions you have!"
     let initMessageData =
     {
