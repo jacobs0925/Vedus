@@ -46,8 +46,8 @@ div
 {
     display: flex;
     flex-direction: column;
-    height: 40vh;
-    width: 65vh;
+    height: 100%;
+    width: 100%;
     border: 2px solid #226bdc;
     border-radius: 1vh;
     background-color: #d5d5d7;
